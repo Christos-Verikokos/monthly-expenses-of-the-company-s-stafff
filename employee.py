@@ -19,7 +19,7 @@ class Employees:
 
 
 class Employee(ABC):
-    # A class about salaried worker
+    # Abstract class that contain common features about other classes.
     def __init__(self,first_name, last_name, position, salary):
         self.first_name = first_name
         self.last_name = last_name
@@ -32,7 +32,7 @@ class Employee(ABC):
         print(f"{self.first_name} {self.last_name} has been given a raise of {amount}. New salary is {self.salary}")
 
 class SalariedWorker(Employee):
-
+    # A class about salaried worker
     def __init__(self, first_name, last_name, position, salary, level):
         super().__init__( first_name, last_name, position, salary)
         self.level = level
@@ -52,7 +52,7 @@ class SalariedWorker(Employee):
                 self.salary, f"+{self.level_increment[self.level]} {self.level} ","", self.total_salary())
 
 class FreelancerEmployee(Employee):
-    # A class about salaried worker
+    # A class about freelancer
     def  __init__(self,first_name, last_name, position, salary, salary_per_overtime, overtime):
         super().__init__(first_name, last_name, position, salary)
         self.salary_per_overtime = salary_per_overtime
